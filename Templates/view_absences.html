@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Liste des Absences</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='adminlte/css/adminlte.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='adminlte/css/bootstrap.min.css') }}">
+</head>
+<body class="hold-transition sidebar-mini layout-fixed">
+    <div class="wrapper">
+        <!-- Main content -->
+        <section class="content">
+            <div class="container-fluid">
+                <h1>Liste des Absences</h1>
+                <table class="table table-bordered table-striped">
+                    <thead>
+                        <tr>
+                            <th>Matricule</th>
+                            <th>Date d'absence</th>
+                            <th>Séance</th>
+                            <th>Session</th>
+                            <th>Statut Justification</th>
+                            <th>Email du Professeur</th> <!-- Added new column for professor's email -->
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for absence in absences %}
+                        <tr>
+                            <td>{{ absence[1] }}</td>
+                            <td>{{ absence[2] }}</td>
+                            <td>{{ absence[5] }}</td>
+                            <td>{{ absence[4] }}</td>
+                            <td>{{ absence[6] }}</td>
+                            <td>{{ absence[3] }}</td> <!-- Display professor's email in the new column -->
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+                <a href="/" class="btn btn-primary">Retour</a>
+            </div>
+        </section>
+    </div>
+</body>
+</html>

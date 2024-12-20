@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Liste des Absences</title>
+</head>
+<body>
+    <h1>Liste des Absences</h1>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Matricule</th>
+                <th>date_absence</th>
+                <th>id_sn</th>
+                <th>Session</th>
+                <th>statut_just</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for absence in absences %}
+            <tr>
+                <td>{{ absence.1 }}</td>
+                <td>{{ absence.2 }}</td>
+                <td>{{ absence.5 }}</td>
+                <td>{{ absence.4 }}</td>
+                <td>{{ absence.6 }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <a href="/">Retour</a>
+</body>
+</html>
+
